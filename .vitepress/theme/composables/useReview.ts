@@ -107,8 +107,10 @@ export function useReview() {
     const resp = await api(applyApiBase() + '/list' + query)
     if (resp) {
       const data = await resp.json()
-      records.value = data
-      totalCount.value = data.length
+      if (Array.isArray(data)) {
+        records.value = data
+        totalCount.value = data.length
+      }
     }
     loading.value = false
   }
@@ -116,7 +118,11 @@ export function useReview() {
   async function loadIpMeta() {
     const resp = await api(applyApiBase() + '/meta')
     if (resp) {
-      ipMeta.value = await resp.json()
+      const data = await resp.json()
+      ipMeta.value = {
+        ip_blacklist: Array.isArray(data?.ip_blacklist) ? data.ip_blacklist : [],
+        ip_fake_counts: (data?.ip_fake_counts && typeof data.ip_fake_counts === 'object') ? data.ip_fake_counts : {},
+      }
     }
   }
 
