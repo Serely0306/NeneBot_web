@@ -1,0 +1,18 @@
+{
+  "name": "nenebot-web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vitepress build && node -e \"const fs=require('fs'),p=require('path'),d='dist',n=p.join(d,'nenebot');fs.mkdirSync(n,{recursive:true});fs.readdirSync(d).filter(f=>f!=='nenebot').forEach(f=>fs.renameSync(p.join(d,f),p.join(n,f)));fs.writeFileSync(p.join(d,'index.html'),'<!DOCTYPE html><html><head><meta http-equiv=refresh content=\\\"0;url=/nenebot/\\\"><link rel=canonical href=/nenebot/></head><body></body></html>')\"",
+    "dev": "vitepress dev",
+    "preview": "vitepress preview",
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "dependencies": {
+    "vitepress": "^1.6.0",
+    "vue": "^3.5.0"
+  }
+}

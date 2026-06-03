@@ -1,0 +1,6 @@
+node_modules/
+.preview-root/
+.vitepress/cache/
+.vitepress/dist/
+dist/
+.edgeone-dist/
