@@ -10,6 +10,7 @@ export default defineConfig({
   srcExclude: ['DEPLOY.md', 'VUE_REFACTOR_PLAN.md'],
 
   head: [
+    ['script', {}, `(function(){var k='vitepress-theme-appearance';if(!localStorage.getItem(k)){localStorage.setItem(k,'light')}})();`],
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
     ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;600&display=swap' }]

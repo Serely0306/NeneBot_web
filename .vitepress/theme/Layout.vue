@@ -4,24 +4,14 @@ import { useData } from 'vitepress'
 import { watch, onMounted, nextTick } from 'vue'
 
 const { Layout } = DefaultTheme
-const { isDark, page } = useData()
+const { isDark } = useData()
 
-const syncTheme = (dark) => {
-  if (typeof document === 'undefined') return
-  const theme = dark ? 'dark' : 'light'
-  document.documentElement.setAttribute('data-theme', theme)
-  localStorage.setItem('nenebot-theme', theme)
-}
-
-watch(isDark, (dark) => syncTheme(dark))
-
-onMounted(() => {
-  syncTheme(isDark.value)
-  const stored = localStorage.getItem('nenebot-theme')
-  if (stored === 'light' || stored === 'dark') {
-    document.documentElement.setAttribute('data-theme', stored)
+/* Keep data-theme attr in sync with VitePress's html.dark as single source of truth */
+watch(isDark, (dark) => {
+  if (typeof document !== 'undefined') {
+    document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light')
   }
-})
+}, { immediate: true })
 
 onMounted(() => {
   nextTick(() => {

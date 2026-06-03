@@ -381,15 +381,15 @@ onMounted(() => {
   line-height: 1.8;
   margin: 0 0 14px 0;
 }
-[data-theme="dark"] .help-module-notice {
+html.dark .help-module-notice {
   background: rgba(214, 48, 49, 0.15);
   border-color: rgba(214, 48, 49, 0.3);
   border-left-color: rgba(214, 48, 49, 0.5);
 }
-[data-theme="dark"] .help-module-notice-title {
+html.dark .help-module-notice-title {
   color: #ff6b6b !important;
 }
-[data-theme="dark"] .help-module-notice p {
+html.dark .help-module-notice p {
   color: #f0f0f0;
 }
 .help-note {

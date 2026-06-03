@@ -2,7 +2,62 @@
    Nenebot VitePress Theme — CSS Custom Properties
    ═══════════════════════════════════════════════════ */
 
+/* ── Light theme (default) ── */
 :root {
+  --bg-base: #f5f3ff;
+  --bg-surface: #ede8fc;
+  --bg-card: rgba(255, 255, 255, 0.9);
+  --bg-card-hover: rgba(255, 255, 255, 0.98);
+  --bg-glass: rgba(255, 255, 255, 0.86);
+  --bg-code: rgba(242, 238, 255, 0.82);
+  --border-subtle: rgba(120, 100, 180, 0.18);
+  --border-hover: rgba(120, 100, 180, 0.32);
+  --border-active: rgba(120, 100, 180, 0.45);
+  --violet: #5b21b6;
+  --violet-glow: rgba(91, 33, 182, 0.2);
+  --text-primary: #140f30;
+  --text-secondary: #3d3668;
+  --text-muted: #6b6298;
+  --orb-opacity: 0.35;
+  --grid-opacity: 0.06;
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.06), 0 8px 24px rgba(100, 80, 160, 0.1);
+  --shadow-btn: 0 4px 16px rgba(139, 92, 246, 0.22);
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 24px;
+  --glass-blur: 12px;
+  --font-display: 'Noto Sans SC', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  --accent: #6b4fd4;
+  --accent-2: #5a3fc0;
+  --title-gradient: linear-gradient(135deg, #4a3099, #6b4fd4);
+  --section-gap: 48px;
+  --subsection-gap: 28px;
+
+  --vp-c-bg: var(--bg-base);
+  --vp-c-bg-soft: var(--bg-surface);
+  --vp-c-bg-elv: var(--bg-card);
+  --vp-c-text-1: var(--text-primary);
+  --vp-c-text-2: var(--text-secondary);
+  --vp-c-text-3: var(--text-muted);
+  --vp-c-brand-1: var(--violet);
+  --vp-c-brand-2: #5b21b6;
+  --vp-c-brand-3: var(--violet);
+  --vp-c-divider: var(--border-subtle);
+  --vp-c-gutter: var(--border-subtle);
+  --vp-font-family-base: var(--font-display);
+  --vp-font-family-mono: var(--font-mono);
+  --vp-nav-height: 56px;
+  --vp-sidebar-width: 272px;
+}
+
+/* ── Dark theme ── */
+html.dark {
   --bg-base: #0b0914;
   --bg-surface: #13102a;
   --bg-card: rgba(22, 18, 50, 0.78);
@@ -26,22 +81,9 @@
   --grid-opacity: 0.04;
   --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 32px rgba(0, 0, 0, 0.25);
   --shadow-btn: 0 4px 20px rgba(139, 92, 246, 0.3);
-  --radius-sm: 8px;
-  --radius: 14px;
-  --radius-lg: 20px;
-  --font-display: 'Noto Sans SC', -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace;
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --radius-xl: 24px;
-  --glass-blur: 12px;
-  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-slow: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   --accent: #a78bfa;
   --accent-2: #8b5cf6;
   --title-gradient: linear-gradient(135deg, #e0d8ff, #a78bfa);
-  --section-gap: 48px;
-  --subsection-gap: 28px;
 
   --vp-c-bg: var(--bg-base);
   --vp-c-bg-soft: var(--bg-surface);
@@ -54,88 +96,33 @@
   --vp-c-brand-3: var(--violet);
   --vp-c-divider: var(--border-subtle);
   --vp-c-gutter: var(--border-subtle);
-  --vp-font-family-base: var(--font-display);
-  --vp-font-family-mono: var(--font-mono);
-  --vp-nav-height: 56px;
-  --vp-sidebar-width: 272px;
 }
 
-[data-theme="light"] {
-  --bg-base: #f5f3ff;
-  --bg-surface: #ede8fc;
-  --bg-card: rgba(255, 255, 255, 0.9);
-  --bg-card-hover: rgba(255, 255, 255, 0.98);
-  --bg-glass: rgba(255, 255, 255, 0.86);
-  --bg-code: rgba(242, 238, 255, 0.82);
-  --border-subtle: rgba(120, 100, 180, 0.18);
-  --border-hover: rgba(120, 100, 180, 0.32);
-  --border-active: rgba(120, 100, 180, 0.45);
-  --violet: #5b21b6;
-  --violet-glow: rgba(91, 33, 182, 0.2);
-  --text-primary: #140f30;
-  --text-secondary: #3d3668;
-  --text-muted: #6b6298;
-  --orb-opacity: 0.35;
-  --grid-opacity: 0.06;
-  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.06), 0 8px 24px rgba(100, 80, 160, 0.1);
-  --shadow-btn: 0 4px 16px rgba(139, 92, 246, 0.22);
-  --radius-xl: 24px;
-  --glass-blur: 12px;
-  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-slow: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  --accent: #a78bfa;
-  --accent-2: #8b5cf6;
-  --title-gradient: linear-gradient(135deg, #e0d8ff, #a78bfa);
-  --section-gap: 48px;
-  --subsection-gap: 28px;
-
-  --vp-c-bg: var(--bg-base);
-  --vp-c-bg-soft: var(--bg-surface);
-  --vp-c-bg-elv: var(--bg-card);
-  --vp-c-text-1: var(--text-primary);
-  --vp-c-text-2: var(--text-secondary);
-  --vp-c-text-3: var(--text-muted);
-  --vp-c-brand-1: var(--violet);
-  --vp-c-brand-2: #5b21b6;
-  --vp-c-brand-3: var(--violet);
-  --vp-c-divider: var(--border-subtle);
-  --vp-c-gutter: var(--border-subtle);
-  --accent: #6b4fd4;
-  --accent-2: #5a3fc0;
-  --title-gradient: linear-gradient(135deg, #4a3099, #6b4fd4);
+/* ── Dark-theme component overrides ── */
+html.dark .nene-btn-secondary {
+  color: #d8d5ff;
+  background: rgba(108, 92, 231, 0.12);
+  border-color: rgba(108, 92, 231, 0.35);
 }
-
-/* ── Light-theme component overrides ── */
-[data-theme="light"] .nene-btn-secondary {
-  color: #4c1d95;
-  background: rgba(108, 92, 231, 0.08);
-  border-color: rgba(108, 92, 231, 0.25);
+html.dark .nene-help-notice {
+  color: #b9d9ff;
+  background: rgba(9, 132, 227, 0.12);
+  border-color: rgba(9, 132, 227, 0.3);
 }
-[data-theme="light"] .nene-help-notice {
-  color: #1e40af;
-  background: rgba(9, 132, 227, 0.08);
-  border-color: rgba(9, 132, 227, 0.2);
-}
-[data-theme="light"] .nene-help-code-block {
-  background: rgba(240, 238, 250, 0.9);
-  color: #1e1b4b;
+html.dark .nene-help-code-block {
+  background: rgba(6, 10, 20, 0.7);
+  color: #edf2ff;
 }
 
 /* ═══════════════════════════════════════════════════
    Base Overrides
    ═══════════════════════════════════════════════════ */
 
-html {
-  transition: background 0.5s, color 0.5s;
-}
-
 body {
   font-family: var(--font-display);
   background: var(--bg-base);
   color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
-  transition: background 0.5s, color 0.5s;
 }
 
 .nenebot-app {
@@ -274,7 +261,7 @@ body {
   font-size: clamp(3.4rem, 8vw, 5.6rem) !important;
   font-weight: 900 !important;
   letter-spacing: -0.04em !important;
-  background: linear-gradient(135deg, #e0d8ff 0%, #a78bfa 15%, #67c8ff 40%, #c4b5fd 65%, #e0d8ff 100%) !important;
+  background: linear-gradient(135deg, #4c1d95 0%, #6d28d9 15%, #0e7490 40%, #7c3aed 65%, #4c1d95 100%) !important;
   background-size: 200% 100% !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
@@ -283,8 +270,8 @@ body {
   line-height: 1.1 !important;
 }
 
-[data-theme="light"] .VPHero .name {
-  background-image: linear-gradient(135deg, #4c1d95 0%, #6d28d9 15%, #0e7490 40%, #7c3aed 65%, #4c1d95 100%) !important;
+html.dark .VPHero .name {
+  background-image: linear-gradient(135deg, #e0d8ff 0%, #a78bfa 15%, #67c8ff 40%, #c4b5fd 65%, #e0d8ff 100%) !important;
 }
 
 @keyframes title-shimmer {
@@ -1261,8 +1248,8 @@ hr {
   background: var(--bg-card-hover);
 }
 
-.nene-select option { background: #1a1a2e; color: var(--text-primary); }
-[data-theme="light"] .nene-select option { background: #fff; color: #140f30; }
+.nene-select option { background: #fff; color: #140f30; }
+html.dark .nene-select option { background: #1a1a2e; color: var(--text-primary); }
 
 .nene-btn {
   width: 100%;
