@@ -172,8 +172,8 @@ function revealSections() {
 
 onMounted(() => revealSections())
 
-watch(unlocked, (val) => {
-  if (val) nextTick(() => revealSections())
+watch([unlocked, records], ([u, r]) => {
+  if (u) nextTick(() => revealSections())
 })
 </script>
 
