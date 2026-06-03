@@ -136,7 +136,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch, nextTick } from 'vue'
 import ClientOnly from '../ClientOnly.vue'
 import { useReview } from '../../composables/useReview'
 
@@ -159,12 +159,21 @@ const filters = [
 
 const selectedRecord = ref<any>(null)
 
-onMounted(() => {
+function revealSections() {
   requestAnimationFrame(() => {
     document.querySelectorAll('.nene-section-reveal').forEach((el, i) => {
-      setTimeout(() => el.classList.add('is-revealed'), i * 100 + 50)
+      // only reveal elements that haven't been revealed yet
+      if (!el.classList.contains('is-revealed')) {
+        setTimeout(() => el.classList.add('is-revealed'), i * 100 + 50)
+      }
     })
   })
+}
+
+onMounted(() => revealSections())
+
+watch(unlocked, (val) => {
+  if (val) nextTick(() => revealSections())
 })
 </script>
 
